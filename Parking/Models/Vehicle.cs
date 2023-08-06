@@ -63,7 +63,15 @@ namespace Parking.Models
             VelocidadeAtual -= tempoSeg * 15;
 		}
 
-		public Vehicle()
+        public void AlterarDados(Vehicle veiculoAlterado)
+        {
+			Proprietario = veiculoAlterado.Proprietario;
+			Modelo = veiculoAlterado.Modelo;
+			Largura = veiculoAlterado.Largura;
+			Cor = veiculoAlterado.Cor;
+        }
+
+        public Vehicle()
 		{
 
 		}

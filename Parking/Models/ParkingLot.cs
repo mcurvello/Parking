@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 namespace Parking.Models
 {
@@ -84,6 +85,16 @@ namespace Parking.Models
                               select veiculo).SingleOrDefault();
 
             return encontrado;
+        }
+
+        public Vehicle AlteraDadosVeiculo(Vehicle veiculoAlterado)
+        {
+            var veiculoTemp = (from veiculo in Veiculos
+                               where veiculo.Placa == veiculoAlterado.Placa
+                               select veiculo).SingleOrDefault();
+
+            veiculoTemp.AlterarDados(veiculoAlterado);
+            return veiculoTemp;
         }
     }
 }
