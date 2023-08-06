@@ -6,7 +6,8 @@ namespace Parking.Tests
 {
     public class VehicleTests
     {
-        [Fact]
+        [Fact(DisplayName = "Teste nº 1")]
+        [Trait("Funcionalidade", "Acelerar")]
         public void TestaVeiculoAcelerar()
         {
             //Arrange
@@ -19,7 +20,8 @@ namespace Parking.Tests
             Assert.Equal(100, veiculo.VelocidadeAtual);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Teste nº 2")]
+        [Trait("Funcionalidade", "Frear")]
         public void TestaVeiculoFrear()
         {
             //Arrange
@@ -30,6 +32,12 @@ namespace Parking.Tests
 
             //Assert
             Assert.Equal(-150, veiculo.VelocidadeAtual);
+        }
+
+        [Fact(DisplayName = "Teste nº 3", Skip = "Teste ainda não implementado")]
+        public void ValidaNomeProprietario()
+        {
+
         }
     }
 }

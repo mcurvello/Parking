@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Parking.Models
 {
@@ -74,6 +75,15 @@ namespace Parking.Models
             }
 
             return informacao;
+        }
+
+        public Vehicle PesquisaVeiculo(string placa)
+        {
+            var encontrado = (from veiculo in Veiculos
+                              where veiculo.Placa == placa
+                              select veiculo).SingleOrDefault();
+
+            return encontrado;
         }
     }
 }
