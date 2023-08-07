@@ -48,7 +48,21 @@ namespace Parking.Models
 		public double Largura { get; set; }
 		public double VelocidadeAtual { get; set; }
 		public string Modelo { get; set; }
-		public string Proprietario { get; set; }
+		public string Proprietario
+		{
+			get
+			{
+				return _proprietario;
+			}
+			set
+			{
+				if (value.Length < 3)
+				{
+					throw new FormatException("Nome de proprietário inválido");
+				}
+				_proprietario = value;
+			}
+		}
 		public DateTime HoraEntrada { get; set; }
 		public DateTime	HoraSaida { get; set; }
 		public VehicleType Tipo { get => _tipo; set => _tipo = value; }
@@ -80,6 +94,16 @@ namespace Parking.Models
 		{
 			Proprietario = proprietario;
 		}
-	}
+
+        public override string ToString()
+        {
+			return $"Ficha do Veículo:\n " +
+				$"Tipo do Veículo: {Tipo}\n " +
+				$"Proprietário: {Proprietario}\n " +
+				$"Modelo: {Modelo}\n " +
+				$"Cor: {Cor}\n " +
+				$"Placa: {Placa}\n ";
+        }
+    }
 }
 

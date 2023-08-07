@@ -85,7 +85,7 @@ namespace Parking.Tests
 			var veiculoAlterado = new Vehicle();
 
 			veiculo.Proprietario = "José Silva";
-			veiculo.Placa = "ZKA-2135";
+            veiculo.Placa = "ZKA-2135";
 			veiculo.Cor = "verde";
 			veiculo.Modelo = "Opala";
 
